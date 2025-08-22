@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+; Remove Copy File Path context menu entries
+[-HKEY_CLASSES_ROOT\*\shell\CopyFilePathMenu]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePath.WithQuotes]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePath.NoQuotes]
+[-HKEY_CLASSES_ROOT\Directory\shell\CopyFilePathMenu]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathDir.WithQuotes]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathDir.NoQuotes]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\CopyFilePathMenu]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathBg.WithQuotes]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathBg.NoQuotes]

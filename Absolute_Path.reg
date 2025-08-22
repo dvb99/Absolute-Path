@@ -1,0 +1,63 @@
+Windows Registry Editor Version 5.00
+
+; Add Copy File Path context menu for files
+; Parent Menu for files
+[HKEY_CLASSES_ROOT\*\shell\CopyFilePathMenu]
+"MUIVerb"="Copy File Path"
+"SubCommands"="CopyFilePath.WithQuotes;CopyFilePath.NoQuotes"
+"Icon"="shell32.dll,134"
+
+; CommandStore Items
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePath.WithQuotes]
+"MUIVerb"="Copy File Path (with quotes)"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePath.WithQuotes\command]
+@="cmd.exe /c echo \"%1\"| clip"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePath.NoQuotes]
+"MUIVerb"="Copy File Path (no quotes)"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePath.NoQuotes\command]
+@="cmd.exe /c echo %1| clip"
+
+
+
+
+; Add Copy File Path context menu for directories/folders
+; Parent Menu for folders
+[HKEY_CLASSES_ROOT\Directory\shell\CopyFilePathMenu]
+"MUIVerb"="Copy Folder Path"
+"Icon"="shell32.dll,134"
+"SubCommands"="CopyFilePathDir.WithQuotes;CopyFilePathDir.NoQuotes"
+
+; CommandStore: Folders - With Quotes
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathDir.WithQuotes]
+"MUIVerb"="Copy Path (with quotes)"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathDir.WithQuotes\command]
+@="cmd.exe /c echo \"%1\"| clip"
+
+; CommandStore: Folders - No Quotes
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathDir.NoQuotes]
+"MUIVerb"="Copy Path (no quotes)"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathDir.NoQuotes\command]
+@="cmd.exe /c echo %1| clip"
+
+
+
+
+; Add Copy File Path context menu for folder background (right-click on empty area)
+; Parent Menu for folder background
+[HKEY_CLASSES_ROOT\Directory\Background\shell\CopyFilePathMenu]
+"MUIVerb"="Copy Background Folder Path"
+"Icon"="shell32.dll,134"
+"SubCommands"="CopyFilePathBg.WithQuotes;CopyFilePathBg.NoQuotes"
+
+; CommandStore: Folder Background - With Quotes
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathBg.WithQuotes]
+"MUIVerb"="Copy Path (with quotes)"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathBg.WithQuotes\command]
+@="cmd.exe /c echo \"%V\"| clip"
+
+; CommandStore: Folder Background - No Quotes
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathBg.NoQuotes]
+"MUIVerb"="Copy Path (no quotes)"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\CopyFilePathBg.NoQuotes\command]
+@="cmd.exe /c echo %V| clip"
